@@ -1,3 +1,3 @@
 # Competietive-Programming
 
-This Repository contains all the Problems on CODECHEF and CODEFORCES, I have done so Far.
+This Repository contains all the Problems on all the coding platforms, I have done so Far.
