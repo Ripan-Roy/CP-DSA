@@ -12,6 +12,15 @@ public:
         this->data = data;
         this->next = NULL;
     }
+
+    // destructor
+    ~node()
+    {
+        if (next != NULL)
+        {
+            delete next;
+        }
+    }
 };
 
 void insertAtHead(node *&head, int data)
@@ -26,6 +35,13 @@ void insertAtTail(node *&tail, int data)
     node *temp = new node(data);
     tail->next = temp;
     tail = tail->next;
+}
+
+void deleteAtHead(node *&head)
+{
+    node *temp = head;
+    head = head->next;
+    delete temp;
 }
 
 void print(node *&head)
