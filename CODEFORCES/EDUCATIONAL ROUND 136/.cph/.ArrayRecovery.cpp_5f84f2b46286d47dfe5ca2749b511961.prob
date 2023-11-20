@@ -1,0 +1,1 @@
+{"name":"Local: ArrayRecovery","url":"d:\\cp\\CODEFORCES\\EDUCATIONAL ROUND 136\\ArrayRecovery.cpp","tests":[{"id":1664465670773,"input":"3\n4\n1 0 2 5\n3\n2 6 3\n3\n2 6 8","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODEFORCES\\EDUCATIONAL ROUND 136\\ArrayRecovery.cpp","group":"local","local":true}

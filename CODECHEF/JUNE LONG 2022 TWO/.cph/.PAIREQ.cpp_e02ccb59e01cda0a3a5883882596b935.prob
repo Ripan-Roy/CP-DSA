@@ -1,0 +1,1 @@
+{"name":"Local: PAIREQ","url":"d:\\cp\\CODECHEF\\JUNE LONG 2022 TWO\\PAIREQ.cpp","tests":[{"id":1656177834968,"input":"5\n3\n1 2 2\n3\n1 2 3\n4\n5 5 5 5\n4\n2 2 1 1\n3\n1 1 2","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODECHEF\\JUNE LONG 2022 TWO\\PAIREQ.cpp","group":"local","local":true}

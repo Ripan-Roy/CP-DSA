@@ -1,0 +1,1 @@
+{"name":"Local: Xor_all","url":"d:\\cp\\CODEFORCES\\ROUND 862\\Xor_all.cpp","tests":[{"id":1680446331647,"input":"5\n3\n1 2 5\n3\n1 2 3\n4\n0 1 2 3\n4\n1 2 2 3\n1\n1","output":"6\n0\n3\n-1\n1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODEFORCES\\ROUND 862\\Xor_all.cpp","group":"local","local":true}

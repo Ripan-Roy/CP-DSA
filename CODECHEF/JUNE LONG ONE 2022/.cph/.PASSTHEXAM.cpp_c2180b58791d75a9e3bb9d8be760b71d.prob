@@ -1,0 +1,1 @@
+{"name":"Local: PASSTHEXAM","url":"d:\\cp\\CODECHEF\\JUNE LONG ONE 2022\\PASSTHEXAM.cpp","tests":[{"id":1657481279023,"input":"5\n9 100 100\n30 40 50\n30 20 40\n0 98 8\n90 80 80","output":"FAIL\nPASS\nFAIL\nFAIL\nPASS"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODECHEF\\JUNE LONG ONE 2022\\PASSTHEXAM.cpp","group":"local","local":true}

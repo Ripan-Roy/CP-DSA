@@ -1,0 +1,1 @@
+{"name":"Local: TheClock","url":"d:\\cp\\CODEFORCES\\ROUND 799\\TheClock.cpp","tests":[{"id":1655224973677,"input":"6\n03:12 360\n00:00 1\n13:22 2\n15:15 10\n11:11 1440\n22:30 27","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODEFORCES\\ROUND 799\\TheClock.cpp","group":"local","local":true}

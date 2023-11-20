@@ -1,0 +1,1 @@
+{"name":"Local: AllDistinct","url":"d:\\cp\\CODEFORCES\\ROUND 799\\AllDistinct.cpp","tests":[{"id":1655218640045,"input":"5\n6\n2 2 2 3 3 3\n5\n9 1 9 9 1\n4\n15 16 16 15\n4\n10 100 1000 10000\n4\n1 2 2 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODEFORCES\\ROUND 799\\AllDistinct.cpp","group":"local","local":true}

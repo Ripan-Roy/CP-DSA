@@ -1,0 +1,1 @@
+{"name":"Local: RATINGPRAC","url":"d:\\cp\\CODECHEF\\STARTERS 40\\RATINGPRAC.cpp","tests":[{"id":1653578385457,"input":"4\n3\n1 2 3\n3\n1 1 2\n5\n100 200 300 400 350\n5\n1000 2000 5000 3000 1000","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODECHEF\\STARTERS 40\\RATINGPRAC.cpp","group":"local","local":true}

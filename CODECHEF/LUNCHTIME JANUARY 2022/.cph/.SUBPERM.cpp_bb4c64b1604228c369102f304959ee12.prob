@@ -1,0 +1,1 @@
+{"name":"Local: SUBPERM","url":"d:\\cp\\CODECHEF\\LUNCHTIME JANUARY 2022\\SUBPERM.cpp","tests":[{"id":1643468799811,"input":"4\n1 1\n3 2\n4 1\n5 3","output":"1\n1 3 2 \n-1\n1 2 5 4 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODECHEF\\LUNCHTIME JANUARY 2022\\SUBPERM.cpp","group":"local","local":true}

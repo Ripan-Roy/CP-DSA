@@ -1,0 +1,1 @@
+{"name":"Local: nex","url":"d:\\cp\\Linked List\\nex.cpp","tests":[{"id":1675491606233,"input":"5\nA 2\nB 5\nA 2\nC 4\nB 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\Linked List\\nex.cpp","group":"local","local":true}

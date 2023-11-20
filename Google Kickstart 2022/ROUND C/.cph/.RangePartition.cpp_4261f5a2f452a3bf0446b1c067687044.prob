@@ -1,0 +1,1 @@
+{"name":"Local: RangePartition","url":"d:\\cp\\Google Kickstart 2022\\ROUND C\\RangePartition.cpp","tests":[{"id":1653221292005,"input":"3\n3 1 2\n3 1 1\n3 1 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\Google Kickstart 2022\\ROUND C\\RangePartition.cpp","group":"local","local":true}

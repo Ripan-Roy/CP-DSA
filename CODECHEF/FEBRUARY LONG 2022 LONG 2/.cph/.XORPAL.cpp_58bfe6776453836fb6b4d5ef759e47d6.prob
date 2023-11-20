@@ -1,0 +1,1 @@
+{"name":"Local: XORPAL","url":"d:\\cp\\CODECHEF\\FEBRUARY LONG 2022 LONG 2\\XORPAL.cpp","tests":[{"id":1644591532332,"input":"4\n2\n00\n4\n0011\n3\n001\n4\n0001","output":"YES\nYES\nYES\nNO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODECHEF\\FEBRUARY LONG 2022 LONG 2\\XORPAL.cpp","group":"local","local":true}

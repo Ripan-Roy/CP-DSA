@@ -1,0 +1,1 @@
+{"name":"Local: ADJXOR2","url":"d:\\cp\\CODECHEF\\STARTERS 51\\ADJXOR2.cpp","tests":[{"id":1660149842586,"input":"3\n2 1\n1 2\n4 1\n2 2 3 3\n5 2\n5 3 6 2 8","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODECHEF\\STARTERS 51\\ADJXOR2.cpp","group":"local","local":true}

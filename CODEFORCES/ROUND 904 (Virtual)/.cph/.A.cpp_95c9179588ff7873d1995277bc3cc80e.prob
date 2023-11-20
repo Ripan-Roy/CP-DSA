@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"d:\\cp\\CODEFORCES\\ROUND 904 (Virtual)\\A.cpp","tests":[{"id":1698646123375,"input":"6\n1 5\n10 8\n37 9\n777 3\n1235 10\n1 10","output":"5\n17\n45\n777\n1243\n19"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODEFORCES\\ROUND 904 (Virtual)\\A.cpp","group":"local","local":true}

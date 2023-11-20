@@ -1,0 +1,1 @@
+{"name":"Local: CGYM","url":"d:\\cp\\Google CodeJam 2022\\ROUND 1C\\CGYM.cpp","tests":[{"id":1651416640328,"input":"4\n1 2 3\n10 12 13\n23 1 22\n23 1 63","output":"2\n1\n0\n2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\Google CodeJam 2022\\ROUND 1C\\CGYM.cpp","group":"local","local":true}

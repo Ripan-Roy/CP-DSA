@@ -1,0 +1,1 @@
+{"name":"Local: ConsecutiveSum","url":"d:\\cp\\CODEFORCES\\ROUND 821\\ConsecutiveSum.cpp","tests":[{"id":1663602012622,"input":"5\n3 2\n5 6 0\n1 1\n7\n5 3\n7 0 4 0 4\n4 2\n2 7 3 4\n3 3\n1000000000 1000000000 999999997","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODEFORCES\\ROUND 821\\ConsecutiveSum.cpp","group":"local","local":true}

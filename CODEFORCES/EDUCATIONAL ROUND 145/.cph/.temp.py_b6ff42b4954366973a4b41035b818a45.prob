@@ -1,0 +1,1 @@
+{"name":"Local: temp","url":"d:\\cp\\CODEFORCES\\EDUCATIONAL ROUND 145\\temp.py","tests":[{"id":1679584838801,"input":"4\n3 2\n2 0\n2 2\n4 6","output":"0\n1\n2\n987654321"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODEFORCES\\EDUCATIONAL ROUND 145\\temp.py","group":"local","local":true}

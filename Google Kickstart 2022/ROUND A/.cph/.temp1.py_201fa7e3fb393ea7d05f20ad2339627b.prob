@@ -1,0 +1,1 @@
+{"name":"Local: temp1","url":"d:\\cp\\Google Kickstart 2022\\temp1.py","tests":[{"id":1647757293000,"input":"3\n5\n33\n12121","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\Google Kickstart 2022\\temp1.py","group":"local","local":true}

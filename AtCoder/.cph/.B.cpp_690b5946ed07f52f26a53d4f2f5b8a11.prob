@@ -1,0 +1,1 @@
+{"name":"Local: B","url":"d:\\cp\\AtCoder\\B.cpp","tests":[{"id":1687003484042,"input":"1 0 1 0 1 0 0 0 0 1 0 0 1 1 0 1 1 1 1 0 0 0 1 0 0 1 1 1 1 1 1 0 0 0 0 1 0 1 0 1 0 1 1 1 1 0 0 1 1 0 0 0 0 1 0 1 0 1 0 1 0 0 0 0","output":"766067858140017173"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\AtCoder\\B.cpp","group":"local","local":true}

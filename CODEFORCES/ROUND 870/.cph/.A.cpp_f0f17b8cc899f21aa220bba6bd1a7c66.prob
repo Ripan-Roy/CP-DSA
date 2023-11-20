@@ -1,0 +1,1 @@
+{"name":"Local: A","url":"d:\\cp\\CODEFORCES\\ROUND 870\\A.cpp","tests":[{"id":1683383701857,"input":"5\ncoolforsez\ncadafurcie\ncodeforces\npaiuforces\nforcescode","output":"4\n5\n0\n4\n9"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODEFORCES\\ROUND 870\\A.cpp","group":"local","local":true}

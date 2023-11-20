@@ -1,104 +1,61 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+bool is_prime(int num)
+{
+    if (num < 2)
+    {
+        return false;
+    }
+    for (int i = 2; i * i <= num; ++i)
+    {
+        if (num % i == 0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+string find_smallest_prime(vector<int> &numbers, int q)
+{
+    sort(numbers.begin(), numbers.end());
+
+    for (int i = 1; i < numbers.size(); ++i)
+    {
+        bool is_prime_p = true;
+        for (int c = 0; c < numbers.size(); ++c)
+        {
+            if (numbers[c] != q && (q + 1) % numbers[c] != q)
+            {
+                is_prime_p = false;
+                break;
+            }
+        }
+        if (is_prime_p && is_prime(q + 1))
+        {
+            return to_string(q + 1);
+        }
+    }
+
+    return "None";
+}
+
 int main()
 {
-    int size;
-    string str1;
-    string str2;
-    cin >> str1;
+    int n;
+    int mini = INT_MAX;
+    vector<int> numbers;
 
-    size = str1.length();
-
-    int count=0;
-
-    int nB = 0;
-    int nG = 0;
-    for (int i = 0; i <= size; i++)
+    while (cin >> n)
     {
-        if (str1[i] == 'B')
-        {
-            nB++;
-        }
-        else
-        {
-            nG++;
-        }
+        int a = n;
+        numbers.push_back(a);
+        mini = min(mini, a);
     }
 
-    if (size % 2 == 1)
-    {
-        if (nG > nB)
-        {
-            for (int i = 1; i <= size; i++)
-            {
-                if (i % 2 == 1)
-                {
-                    str2.push_back('G');
-                }
-                else
-                {
-                    str2.push_back('B');
-                }
-            }
-        }
 
-        else
-        {
-            for (int i = 1; i < size; i++)
-            {
-                if (i % 2 == 1)
-                {
-                    str2.push_back('B');
-                }
-                else
-                {
-                    str2.push_back('G');
-                }
-            }
-        }
-    }
-    else
-    {
-        if(str1[0] == 'B')
-        {
-            for(int i=1; i<=size; i++)
-            {
-                if(i % 2 == 1)
-                {
-                    str2.push_back('B');
-                }
-                else
-                {
-                    str2.push_back('G');
-                }
-            }
-        }
+    cout << find_smallest_prime(numbers, mini) << endl;
 
-        else
-        {
-            for(int i=1; i<=size; i++)
-            {
-                if(i % 2 == 1)
-                {
-                    str2.push_back('B');
-                }
-                else
-                {
-                    str2.push_back('G');
-                }
-            }
-        }
-    }
-
-    for(int i=0; i<size; i++)
-    {
-        if(str1[i] != str2[i])
-        {
-            count++;
-        }
-    }
-
-    cout << count/2;
     return 0;
 }

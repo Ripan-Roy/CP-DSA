@@ -1,0 +1,1 @@
+{"name":"Local: C","url":"d:\\cp\\CODEFORCES\\ROUND 835\\C.cpp","tests":[{"id":1682226350589,"input":"5\n4\n4 7 3 5\n2\n1 2\n5\n1 2 3 4 5\n3\n4 9 4\n4\n4 4 4 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODEFORCES\\ROUND 835\\C.cpp","group":"local","local":true}

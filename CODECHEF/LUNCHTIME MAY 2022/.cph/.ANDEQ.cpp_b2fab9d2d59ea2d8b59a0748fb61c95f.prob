@@ -1,0 +1,1 @@
+{"name":"Local: ANDEQ","url":"d:\\cp\\CODECHEF\\LUNCHTIME MAY 2022\\ANDEQ.cpp","tests":[{"id":1652634723690,"input":"4\n4\n0 0 0 1\n2\n1 1\n6\n1 2 3 4 5 0\n4\n2 28 3 22","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODECHEF\\LUNCHTIME MAY 2022\\ANDEQ.cpp","group":"local","local":true}

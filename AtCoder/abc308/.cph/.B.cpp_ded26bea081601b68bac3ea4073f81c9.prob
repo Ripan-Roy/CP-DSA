@@ -1,0 +1,1 @@
+{"name":"Local: B","url":"d:\\cp\\AtCoder\\abc308\\B.cpp","tests":[{"id":1688213739953,"input":"3 2\nred green blue\nblue red\n800 1600 2800","output":""},{"id":1688213749062,"input":"3 2\ncode queen atcoder\nking queen\n10 1 1","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\AtCoder\\abc308\\B.cpp","group":"local","local":true}

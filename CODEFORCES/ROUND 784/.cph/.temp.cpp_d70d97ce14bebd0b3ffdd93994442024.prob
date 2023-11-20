@@ -1,0 +1,1 @@
+{"name":"Local: temp","url":"d:\\cp\\CODEFORCES\\ROUND 784\\temp.cpp","tests":[{"id":1650556796596,"input":"7\n1\n1\n3\n2 2 2\n7\n2 2 3 3 4 2 2\n8\n1 4 3 4 3 2 4 1\n9\n1 1 1 2 2 2 3 3 3\n5\n1 5 2 4 3\n4\n4 4 4 4","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODEFORCES\\ROUND 784\\temp.cpp","group":"local","local":true}

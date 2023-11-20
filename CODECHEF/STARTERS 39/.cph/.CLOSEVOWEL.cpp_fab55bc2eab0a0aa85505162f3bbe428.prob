@@ -1,0 +1,1 @@
+{"name":"Local: CLOSEVOWEL","url":"d:\\cp\\CODECHEF\\STARTERS 39\\CLOSEVOWEL.cpp","tests":[{"id":1652892747656,"input":"4\n5\naeiou\n5\nabcde\n8\nstarters\n8\ncodechef","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODECHEF\\STARTERS 39\\CLOSEVOWEL.cpp","group":"local","local":true}

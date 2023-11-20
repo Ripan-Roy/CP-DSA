@@ -1,0 +1,1 @@
+{"name":"Local: MaximumSet","url":"d:\\cp\\CODEFORCES\\EDUCATIONAL ROUND 144\\MaximumSet.cpp","tests":[{"id":1677598836409,"input":"4\n3 11\n13 37\n1 100000\n4 100","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODEFORCES\\EDUCATIONAL ROUND 144\\MaximumSet.cpp","group":"local","local":true}

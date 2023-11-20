@@ -1,0 +1,1 @@
+{"name":"Local: XORR","url":"d:\\cp\\CODECHEF\\STARTERS 40\\XORR.cpp","tests":[{"id":1653583053170,"input":"2\n4\n1 2 3 4\n4 3 2 1\n5\n1 3 4 7 9\n5 1 0 5 13","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\cp\\CODECHEF\\STARTERS 40\\XORR.cpp","group":"local","local":true}
