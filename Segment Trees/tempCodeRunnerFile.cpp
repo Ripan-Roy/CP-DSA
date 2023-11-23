@@ -1,3 +1,5 @@
+// Author: Ripan-Roy
+// Created: 2023-11-24
 #pragma GCC optimize("Ofast")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
 #pragma GCC optimize("unroll-loops")
@@ -20,8 +22,8 @@ typedef tree<int, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_u
 
 #define FOR(i, a, b) for (int i = (a); i < (b); ++i)
 #define RFOR(i, b, a) for (int i = (b)-1; i >= (a); --i)
-#define REP(i, n) FOR(i, 0, n)
-#define REPR(i, n) RFOR(i, n, 0)
+#define VIN(i, n) FOR(i, 0, n)
+#define RVIN(i, n) RFOR(i, n, 0)
 #define PB push_back
 #define MP make_pair
 #define ALL(x) (x).begin(), (x).end()
@@ -45,42 +47,56 @@ void helper()
 {
     ll n;
     cin >> n;
-    vll arr(n + 2);
-    FOR(i, 1, n + 1)
+    ll a = 0, b = 0, c;
+    FOR(i, 0, n)
     {
-        cin >> arr[i];
-    }
-    ll mx = 0;
-    ll idx = -1;
-    arr[0] = arr[1];
-    arr[n + 1] = arr[n];
-    FOR(i, 1, n + 1)
-    {
-        if(arr[i] > mx && (arr[i] > arr[i - 1] || arr[i] > arr[i + 1]))
+        cin >> c;
+        if (c == 25)
         {
-            idx = i;
-            mx = arr[i];
+            a++;
+        }
+        if (c == 50)
+        {
+            a--;
+            b++;
+        }
+        if (c == 100)
+        {
+            if (b != 0)
+            {
+                b--;
+                a--;
+            }
+            else
+            {
+                a -= 3;
+            }
+        }
+        if (a < 0 or b < 0)
+        {
+            cout << "NO\n";
+            return;
         }
     }
-    cout << idx << "\n";
+    cout << "YES\n";
 }
 
 int main()
 {
-    #ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #endif // ONLINE_JUDGE
+// #ifndef ONLINE_JUDGE
+//     freopen("input.txt", "r", stdin);
+//     freopen("output.txt", "w", stdout);
+// #endif
     fastIO();
     ll tc = 1;
-    cin >> tc;
+    // cin >> tc;
     for (int t = 1; t <= tc; t++)
     {
         // cout << "Case #" << t << ": ";
         helper();
     }
-    #ifndef ONLINE_JUDGE
-        runTime();
-    #endif
+#ifndef ONLINE_JUDGE
+    runTime();
+#endif
     return 0;
 }

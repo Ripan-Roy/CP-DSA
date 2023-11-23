@@ -1,86 +1,94 @@
-#include <iostream>
-#include <vector>
-
+#pragma GCC optimize("Ofast")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+#pragma GCC optimize("unroll-loops")
+#include <bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 using namespace std;
+using namespace __gnu_pbds;
+
+#define ll long long
+#define ld long double
+#define MOD 1000000007
+#define INF LLONG_MAX
+
+typedef vector<int> vi;
+typedef pair<int, int> pii;
+typedef vector<ll> vll;
+typedef pair<ll, ll> pll;
+typedef tree<int, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_update> oSet;
+
+#define FOR(i, a, b) for (int i = (a); i <= (b); ++i)
+#define RFOR(i, b, a) for (int i = (b); i > (a); --i)
+#define REP(i, n) FOR(i, 0, n)
+#define REPR(i, n) RFOR(i, n, 0)
+#define PB push_back
+#define MP make_pair
+#define ALL(x) (x).begin(), (x).end()
+#define SZ(x) ((int)(x).size())
+#define F first
+#define S second
+#define countSetBits(x) __builtin_popcountll(x)
+
+void fastIO()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+}
+void runTime()
+{
+    cerr << "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " ms.\n";
+}
+
+void helper()
+{
+    ll n;
+    cin >> n;
+    vll arr(n);
+    REP(i, n)
+    {
+        cin >> arr[i];
+    }
+    vll dp(n + 1);
+    dp[n] = 0;
+    RFOR(i , n, 0)
+    {
+        if (arr[i] == 1 and dp[i + 1])
+        {
+            dp[i] = 0;
+        }
+        else
+        {
+            dp[i] = 1;
+        }
+    }
+    if (dp[1])
+    {
+        cout << "First\n";
+    }
+    else
+    {
+        cout << "Second\n";
+    }
+}
 
 int main()
 {
-    int t;
-    cin >> t;
-
-    while (t--)
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+    fastIO();
+    ll tc = 1;
+    cin >> tc;
+    for (int t = 1; t <= tc; t++)
     {
-        int n, q;
-        cin >> n >> q;
-
-        vector<int> a(n);
-        for (int i = 0; i < n; i++)
-        {
-            cin >> a[i];
-        }
-
-        vector<int> updates(q);
-        vector<int> queries(q);
-        for (int i = 0; i < q; i++)
-        {
-            int type;
-            cin >> type;
-
-            if (type == 1)
-            {
-                int l, r;
-                cin >> l >> r;
-
-                for (int j = l - 1; j < r; j++)
-                {
-                    int sum = 0;
-                    int tmp = a[j];
-                    while (tmp > 0)
-                    {
-                        sum += tmp % 10;
-                        tmp /= 10;
-                    }
-                    a[j] = sum;
-                }
-            }
-            else
-            {
-                int x;
-                cin >> x;
-
-                updates[i] = x;
-            }
-        }
-
-        for (int i = 0; i < q; i++)
-        {
-            if (updates[i] != 0)
-            {
-                int sum = 0;
-                int tmp = a[updates[i] - 1];
-                while (tmp > 0)
-                {
-                    sum += tmp % 10;
-                    tmp /= 10;
-                }
-                a[updates[i] - 1] = sum;
-
-                queries[i] = a[updates[i] - 1];
-            }
-            else
-            {
-                queries[i] = a[queries[i] - 1];
-            }
-        }
-
-        for (int i = 0; i < q; i++)
-        {
-            if (queries[i] != 0)
-            {
-                cout << queries[i] << endl;
-            }
-        }
+        // cout << "Case #" << t << ": ";
+        helper();
     }
-
+#ifndef ONLINE_JUDGE
+    runTime();
+#endif
     return 0;
 }
