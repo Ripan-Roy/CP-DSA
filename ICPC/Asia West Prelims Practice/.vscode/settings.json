@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "utility": "cpp",
+        "t": "cpp",
+        "ostream": "cpp"
+    }
+}

@@ -1,119 +1,72 @@
 #include <bits/stdc++.h>
 #define ll long long int
-#define ld long double
-
-
-
 using namespace std;
 
-void fastIO()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-}
-
-ll findPath(vector<string> &mat, ll n, ll col)
-{
-    ll coin = 0;
-    ll pos = n - 1;
-    for (int row = n - 1; row >= 0; row--)
-    {
-        if (mat[row][col] == '0')
-        {
-            return row;
-        }
-    }
-    return 0;
-}
-pair<ll, ll> findHurdles(vector<string> &mat, ll n, ll col)
-{
-    ll coin = 0;
-    ll hurdles = 0;
-    for (ll row = 0; row < n; row++)
-    {
-        if (mat[row][col] == 'H')
-        {
-            hurdles++;
-        }
-        else if (mat[row][col] == 'C')
-        {
-            coin++;
-        }
-    }
-    pair<ll, ll> temp = {coin, hurdles};
-    return temp;
-}
-vector<ll> convert(string &str)
-{
-    vector<ll> ans;
-    string s;
-    stringstream ss(str);
-    while (getline(ss, s, ' '))
-    {
-        ans.push_back(stoi(s));
-    }
-    return ans;
-}
-
-pair<ll, ll> findCoins(vector<string> &mat, ll n, ll col)
-{
-    ll coin = 0;
-    ll pos = n - 1;
-    for (ll row = 0; row < n; row++)
-    {
-        if (mat[row][col] == 'C')
-        {
-            coin++;
-            pos = min(pos, row);
-        }
-    }
-    pair<ll, ll> temp = {coin, pos};
-    return temp;
-}
+const ll MOD = 1e9 + 7;
+#define FOR(i, a, b) for (int i = (a); i < (b); ++i)
+#define F0R(i, a) FOR(i, 0, a)
+#define ROF(i, a, b) for (int i = (b)-1; i >= (a); --i)
+#define R0F(i, a) ROF(i, 0, a)
+#define rep(a) F0R(_, a)
+#define each(a, x) for (auto &a : x)
 
 int main()
 {
-    fastIO();
-    vector<string> arr;
-    string temp;
-    while (getline(cin, temp))
+    string good, name;
+
+    cin >> good >> name;
+
+    int n = good.size();
+    int m = name.size();
+
+    set<char> good_strings;
+    for (int i = 0; i < n; i++)
     {
-        if (temp == "")
-        {
-            continue;
-        }
-        arr.push_back(temp);
+        good_strings.insert(good[i]);
     }
 
-    vector<ll> size = convert(arr[0]);
-    ll n = size[0];
-    ll m = size[1];
+    ll ans = 0;
 
-    auto it = arr.begin() + 1;
-    vector<string> mat(it, arr.end());
+    char prev = good[0];
 
-    ll coin = 0;
-    ll energy = 0;
-
-    for (ll i = 0; i < m; i++)
+    for (int i = 0; i < m; i++)
     {
-        auto temp = findHurdles(mat, n, i);
+        char ch = name[i];
+        if (good_strings.find(ch) != good_strings.end())
+            continue;
 
-        if (temp.first > 0)
+        map<int, vector<char>> mp;
+        for (int j = 0; j < n; j++)
         {
-            auto money = findCoins(mat, n, i);
-            coin += money.first;
-            energy += (2 * (n - money.second - 1));
+            int diff = abs(ch - good[j]);
+            mp[diff].push_back(good[j]);
+        }
+
+        auto it = mp.begin();
+        if (it->second.size() > 1)
+        {
+            auto v = it->second;
+            char next_prev;
+            int dist = INT_MAX;
+
+            for (auto curr : v)
+            {
+                if (dist > abs(static_cast<int>(curr) - static_cast<int>(prev)))
+                {
+                    dist = abs(static_cast<int>(curr) - static_cast<int>(prev));
+                    next_prev = curr;
+                }
+            }
+            ans += abs(next_prev - prev);
+            prev = next_prev;
         }
         else
         {
-            ll path = findPath(mat, n, i);
-            energy += 2 * (n - path - 1);
+            prev = it->second[0];
+            ans += abs(static_cast<int>(ch) - static_cast<int>(prev));
         }
     }
-
-    cout << coin << " " << energy;
+    cout << ans;
 
     return 0;
 }
