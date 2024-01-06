@@ -1,0 +1,1 @@
+{"name":"Local: C","url":"c:\\Users\\Ripan Roy\\Desktop\\CP\\CODEFORCES\\ROUND 912\\C.cpp","tests":[{"id":1701367474995,"input":"4\n6\n1 -3 7 -6 2 5\n4\n2 9 -5 -3\n8\n-3 -4 2 -5 1 10 17 23\n1\n830","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Ripan Roy\\Desktop\\CP\\CODEFORCES\\ROUND 912\\C.cpp","group":"local","local":true}

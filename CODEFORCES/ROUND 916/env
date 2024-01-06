@@ -1,0 +1,2 @@
+META_API_URL=
+SPOTIFY_API_URL=http GET https://api.spotify.com/v1/recommendations/available-genre-seeds \Authorization:'Bearer 1POdFZRZbvb...qqillRxMr2z'

@@ -58,23 +58,23 @@ ll bfs(ll n, ll m, vector<vector<ll>> &fort, ll row, ll col)
     while (!q.empty())
     {
         pair<ll, ll> top = q.front();
+        ll row = top.first;
+        ll col = top.second;
         q.pop();
 
         for (ll i = 0; i < 4; i++)
         {
-            ll nRow = top.first + dRow[i];
-            ll nCol = top.second + dCol[i];
+            ll nRow = row + dRow[i];
+            ll nCol = col + dCol[i];
             if (nRow >= 0 && nRow < n && nCol >= 0 && nCol < m && !vis[nRow][nCol] && fort[nRow][nCol] == 0)
             {
-                dist[nRow][nCol] = dist[top.first][top.second] + 1;
+                dist[nRow][nCol] = dist[row][col] + 1;
                 vis[nRow][nCol] = true;
-
-                pair<ll, ll> nPair = {nRow, nCol};
-                q.push(nPair);
+                q.push({nRow, nCol});
             }
         }
     }
-    return dist[m - 1][n - 1];
+    return dist[n - 1][m - 1];
 }
 void helper()
 {
@@ -89,9 +89,9 @@ void helper()
         }
     }
     ll maxTime = 0;
-    for (ll i = 0; i < n; i++)
+    for (ll i = 1; i < n - 1; i++)
     {
-        for (ll j = 0; j < m; j++)
+        for (ll j = 1; j < m - 1; j++)
         {
             if (fort[i][j] == 0)
             {

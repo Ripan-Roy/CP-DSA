@@ -63,7 +63,7 @@ void helper()
         {
             continue;
         }
-        str.push_back(temp);
+        str.push_back(temp);-
     }
     vll arr1 = convert(str[0]);
     vll arr2 = convert(str[1]);

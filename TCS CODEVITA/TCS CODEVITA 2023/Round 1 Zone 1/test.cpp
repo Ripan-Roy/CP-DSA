@@ -1,5 +1,5 @@
 // Author: Ripan-Roy
-// Created: 2023-11-25
+// Created: 2023-12-14
 #pragma GCC optimize("Ofast")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
 #pragma GCC optimize("unroll-loops")
@@ -43,40 +43,52 @@ void runTime()
     cerr << "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " ms.\n";
 }
 
+ll binarySearch(vll &range, ll target)
+{
+    ll low = 0, high = range.size() - 1;
+    while (low < high)
+    {
+        ll mid = low + (high - low) / 2;
+        if (range[mid] < target)
+        {
+            low = mid + 1;
+        }
+        else
+        {
+            high = mid;
+        }
+    }
+    return low;
+}
+
 void helper()
 {
     ll n;
     cin >> n;
-    string str;
-    cin >> str;
-    vll t, m;
+    vll arr(n);
     VIN(i, n)
     {
-        if (str[i] == 'T')
-        {
-            t.PB(i);
-        }
-        else
-        {
-            m.PB(i);
-        }
+        cin >> arr[i];
+    }
+    ll m;
+    cin >> m;
+    vll brr(m);
+    VIN(i, m)
+    {
+        cin >> brr[i];
+    }
+    vll range(n + 1, 0);
+    range[0] = 0;
+    FOR(i, 1, n + 1)
+    {
+        range[i] = range[i - 1] + arr[i - 1];
     }
 
-    if (t.size() != 2 * m.size())
+    FOR(i, 0, m)
     {
-        cout << "NO\n";
-        return;
+        ll pos = binarySearch(range, brr[i]);
+        cout << pos << "\n";
     }
-    ll j = 0;
-    VIN(i, m.size())
-    {
-        if (m[i] < t[i] or m[i] > t[i + m.size()])
-        {
-            cout << "NO\n";
-            return;
-        }
-    }
-    cout << "YES\n";
 }
 
 int main()
@@ -87,14 +99,14 @@ int main()
     #endif
     fastIO();
     ll tc = 1;
-    cin >> tc;
+    // cin >> tc;
     for (int t = 1; t <= tc; t++)
     {
         // cout << "Case #" << t << ": ";
         helper();
     }
-    #ifndef ONLINE_JUDGE
-        runTime();
-    #endif
+#ifndef ONLINE_JUDGE
+    runTime();
+#endif
     return 0;
 }
