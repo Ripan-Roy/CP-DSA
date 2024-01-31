@@ -1,8 +1,8 @@
 // Author: Ripan-Roy
-// Created: 2023-11-24
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
+// Created: 2024-01-19
+// #pragma GCC optimize("Ofast")
+// #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+// #pragma GCC optimize("unroll-loops")
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -42,17 +42,35 @@ void runTime()
 {
     cerr << "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " ms.\n";
 }
-vector<ll> convert(string &str)
+vector<string> convert(string &str)
 {
-    vector<ll> ans;
+    vector<string> ans;
     string s;
     stringstream ss(str);
     while (getline(ss, s, ' '))
     {
-        ans.push_back(stoi(s));
+        ans.push_back(s);
     }
     return ans;
 }
+
+bool isPalindrome(string &s)
+{
+    ll n = s.length();
+    FOR(i, 0, n)
+    {
+        FOR(j, i, n)
+        {
+            string temp = s.substr(i, j - i + 1);
+            if (temp == string(temp.rbegin(), temp.rend()))
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
 void helper()
 {
     vector<string> str;
@@ -65,50 +83,40 @@ void helper()
         }
         str.push_back(temp);
     }
-    vll arr1 = convert(str[0]);
-    vll arr2 = convert(str[1]);
-    ll n = stoi(str[2]);
-    ll size1 = arr1.size();
-    ll size2 = arr2.size();
-    ll i, j, minIdx;
-    FOR(i, 0, size1 - 1)
+    vector<string> arr = convert(str[0]);
+    ll interval = stoi(str[1]);
+    ll n = arr.size();
+    string pref = "";
+    FOR(i, 0, n)
     {
-        minIdx = i;
-        FOR(j, i + 1, size1)
+        pref += (arr[i].front());
+        if (isPalindrome(pref) && (ll)(pref.length()) >= interval)
         {
-            if (arr1[j] < arr1[minIdx])
-            {
-                minIdx = j;
-            }
+            pref.pop_back();
+            // cout << arr[i] << endl;
+            arr.erase(arr.begin() + i);
+            i--;
+            n--;
         }
-        if (minIdx != i)
-        {
-            swap(arr1[i], arr1[minIdx]);
-            swap(arr2[i], arr2[minIdx]);
-        }
+    }
+    while (n > 1)
+    {
+        n = arr.size();
+        ll i = 0;
+        // cout << arr[i] << endl;
+        arr.erase(arr.begin() + interval);
         n--;
-        if (n == 0)
-        {
-            break;
-        }
     }
-    FOR(i, 0, size2)
-    {
-        cout << arr2[i];
-        if (i != size2 - 1)
-        {
-            cout << " ";
-        }
-    }
+    cout <<arr[0];
 }
 
 int main()
 {
-// #ifndef ONLINE_JUDGE
-//     freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
-    fastIO();
+    // #ifndef ONLINE_JUDGE
+    //     freopen("input.txt", "r", stdin);
+    //     freopen("output.txt", "w", stdout);
+    // #endif
+    // fastIO();
     ll tc = 1;
     // cin >> tc;
     for (int t = 1; t <= tc; t++)
@@ -116,8 +124,8 @@ int main()
         // cout << "Case #" << t << ": ";
         helper();
     }
-// #ifndef ONLINE_JUDGE
-//     runTime();
-// #endif
+    // #ifndef ONLINE_JUDGE
+    //     runTime();
+    // #endif
     return 0;
 }

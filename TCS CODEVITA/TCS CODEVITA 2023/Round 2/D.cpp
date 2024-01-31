@@ -1,8 +1,8 @@
 // Author: Ripan-Roy
-// Created: 2023-11-24
-#pragma GCC optimize("Ofast")
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
-#pragma GCC optimize("unroll-loops")
+// Created: 2024-01-19
+// #pragma GCC optimize("Ofast")
+// #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+// #pragma GCC optimize("unroll-loops")
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
@@ -42,6 +42,7 @@ void runTime()
 {
     cerr << "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " ms.\n";
 }
+
 vector<ll> convert(string &str)
 {
     vector<ll> ans;
@@ -53,6 +54,16 @@ vector<ll> convert(string &str)
     }
     return ans;
 }
+
+static bool comp(pair<ll, pll> &a, pair<ll, pll> &b)
+{
+    if (a.S.F == b.S.F)
+    {
+        return a.S.S < b.S.S;
+    }
+    return a.S.F > b.S.F;
+}
+
 void helper()
 {
     vector<string> str;
@@ -65,49 +76,34 @@ void helper()
         }
         str.push_back(temp);
     }
-    vll arr1 = convert(str[0]);
-    vll arr2 = convert(str[1]);
-    ll n = stoi(str[2]);
-    ll size1 = arr1.size();
-    ll size2 = arr2.size();
-    ll i, j, minIdx;
-    FOR(i, 0, size1 - 1)
+    vll damage = convert(str[0]);
+    vll size = convert(str[1]);
+    vll category = convert(str[2]);
+    ll bSize = stoi(str[3]);
+
+    ll n = damage.size();
+
+    vector<pair<ll, pll>> combined(n);
+    VIN(i, n)
     {
-        minIdx = i;
-        FOR(j, i + 1, size1)
-        {
-            if (arr1[j] < arr1[minIdx])
-            {
-                minIdx = j;
-            }
-        }
-        if (minIdx != i)
-        {
-            swap(arr1[i], arr1[minIdx]);
-            swap(arr2[i], arr2[minIdx]);
-        }
-        n--;
-        if (n == 0)
-        {
-            break;
-        }
+        combined[i] = {category[i], {damage[i], size[i]}};
     }
-    FOR(i, 0, size2)
-    {
-        cout << arr2[i];
-        if (i != size2 - 1)
-        {
-            cout << " ";
-        }
-    }
+    sort(ALL(combined), comp);
+
+    // VIN(i, n)
+    // {
+    //     cout << combined[i].F << "->" << combined[i].S.F << "->" << combined[i].S.S << endl;
+    // }
+
+    
 }
 
 int main()
 {
-// #ifndef ONLINE_JUDGE
-//     freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
+    // #ifndef ONLINE_JUDGE
+    //     freopen("input.txt", "r", stdin);
+    //     freopen("output.txt", "w", stdout);
+    // #endif
     fastIO();
     ll tc = 1;
     // cin >> tc;
@@ -116,8 +112,8 @@ int main()
         // cout << "Case #" << t << ": ";
         helper();
     }
-// #ifndef ONLINE_JUDGE
-//     runTime();
-// #endif
+    // #ifndef ONLINE_JUDGE
+    //     runTime();
+    // #endif
     return 0;
 }

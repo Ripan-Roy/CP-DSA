@@ -1,5 +1,5 @@
 // Author: Ripan-Roy
-// Created: 2023-11-24
+// Created: 2024-01-09
 #pragma GCC optimize("Ofast")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
 #pragma GCC optimize("unroll-loops")
@@ -42,82 +42,51 @@ void runTime()
 {
     cerr << "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " ms.\n";
 }
-vector<ll> convert(string &str)
-{
-    vector<ll> ans;
-    string s;
-    stringstream ss(str);
-    while (getline(ss, s, ' '))
-    {
-        ans.push_back(stoi(s));
-    }
-    return ans;
-}
+
 void helper()
 {
-    vector<string> str;
-    string temp;
-    while (getline(cin, temp))
+    ll n;
+    cin >> n;
+    vll arr(n);
+    VIN(i, n)
     {
-        if (temp == "")
-        {
-            continue;
-        }
-        str.push_back(temp);
+        cin >> arr[i];
     }
-    vll arr1 = convert(str[0]);
-    vll arr2 = convert(str[1]);
-    ll n = stoi(str[2]);
-    ll size1 = arr1.size();
-    ll size2 = arr2.size();
-    ll i, j, minIdx;
-    FOR(i, 0, size1 - 1)
+    map<ll, ll> cnt;
+    set<ll> b;
+    FOR(i, 0, n)
     {
-        minIdx = i;
-        FOR(j, i + 1, size1)
-        {
-            if (arr1[j] < arr1[minIdx])
-            {
-                minIdx = j;
-            }
-        }
-        if (minIdx != i)
-        {
-            swap(arr1[i], arr1[minIdx]);
-            swap(arr2[i], arr2[minIdx]);
-        }
-        n--;
-        if (n == 0)
-        {
-            break;
-        }
+        cnt[arr[i]]++;
+        b.insert(arr[i]);
+        b.insert(arr[i] + 1);
     }
-    FOR(i, 0, size2)
+    ll last = 0;
+    ll res = 0;
+    for (auto x : b)
     {
-        cout << arr2[i];
-        if (i != size2 - 1)
-        {
-            cout << " ";
-        }
+        ll c = cnt[x];
+        res += max(0ll, c - last);
+        last = c;
     }
+    cout << res << '\n';
 }
 
 int main()
 {
-// #ifndef ONLINE_JUDGE
-//     freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
     fastIO();
     ll tc = 1;
-    // cin >> tc;
+    cin >> tc;
     for (int t = 1; t <= tc; t++)
     {
         // cout << "Case #" << t << ": ";
         helper();
     }
-// #ifndef ONLINE_JUDGE
-//     runTime();
-// #endif
+#ifndef ONLINE_JUDGE
+    runTime();
+#endif
     return 0;
 }

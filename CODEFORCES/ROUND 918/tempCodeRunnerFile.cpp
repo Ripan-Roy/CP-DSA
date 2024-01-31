@@ -45,34 +45,40 @@ void runTime()
 
 void helper()
 {
-    ll n, m, min, max;
-    cin >> n >> m >> min >> max;
-    vll s;
-    FOR(i, 0, m)
+    ll n, m;
+    cin >> n >> m;
+    vector<vector<char>> g((n + 7), vector<char>(m + 7));
+    VIN(i, n)
     {
-        ll x;
-        cin >> x;
-        s.PB(x);
+        VIN(j, m)
+        {
+            cin >> g[i][j];
+        }
     }
-    ll mini = *min_element(ALL(s));
-    ll maxi = *max_element(ALL(s));
-    if(mini != min)
+    FOR(j, 0, m)
     {
-        s.PB(min);
+        ll last = n - 1;
+        RFOR(i, n, 0)
+        {
+            if (g[i][j] == 'o')
+            {
+                last = i - 1;
+            }
+            else if(g[i][j] == '*')
+            {
+                swap(g[i][j], g[last][j]);
+                last--;
+            }
+        }
     }
-    if(maxi != max)
+    VIN(i, n)
     {
-        s.PB(max);
+        VIN(j, m)
+        {
+            cout << g[i][j];
+        }
+        cout << endl;
     }
-    sort(ALL(s));
-    mini = *min_element(ALL(s));
-    maxi = *max_element(ALL(s));
-    if(mini != min or maxi != max or s.size() > n)
-    {
-        cout << "Incorrect";
-        return;
-    }
-    cout << "Correct";
 }
 
 int main()
@@ -83,7 +89,7 @@ int main()
 #endif
     fastIO();
     ll tc = 1;
-    // cin >> tc;
+    cin >> tc;
     for (int t = 1; t <= tc; t++)
     {
         // cout << "Case #" << t << ": ";

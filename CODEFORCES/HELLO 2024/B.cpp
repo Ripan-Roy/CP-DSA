@@ -1,5 +1,5 @@
 // Author: Ripan-Roy
-// Created: 2023-11-24
+// Created: 2024-01-07
 #pragma GCC optimize("Ofast")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
 #pragma GCC optimize("unroll-loops")
@@ -42,82 +42,44 @@ void runTime()
 {
     cerr << "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " ms.\n";
 }
-vector<ll> convert(string &str)
-{
-    vector<ll> ans;
-    string s;
-    stringstream ss(str);
-    while (getline(ss, s, ' '))
-    {
-        ans.push_back(stoi(s));
-    }
-    return ans;
-}
+
 void helper()
 {
-    vector<string> str;
-    string temp;
-    while (getline(cin, temp))
+    ll n;
+    cin >> n;
+    string str;
+    cin >> str;
+    ll plus = 0, minus = 0;
+    VIN(i, n)
     {
-        if (temp == "")
+        if (str[i] == '+')
         {
-            continue;
+            plus++;
         }
-        str.push_back(temp);
-    }
-    vll arr1 = convert(str[0]);
-    vll arr2 = convert(str[1]);
-    ll n = stoi(str[2]);
-    ll size1 = arr1.size();
-    ll size2 = arr2.size();
-    ll i, j, minIdx;
-    FOR(i, 0, size1 - 1)
-    {
-        minIdx = i;
-        FOR(j, i + 1, size1)
+        else
         {
-            if (arr1[j] < arr1[minIdx])
-            {
-                minIdx = j;
-            }
-        }
-        if (minIdx != i)
-        {
-            swap(arr1[i], arr1[minIdx]);
-            swap(arr2[i], arr2[minIdx]);
-        }
-        n--;
-        if (n == 0)
-        {
-            break;
+            minus++;
         }
     }
-    FOR(i, 0, size2)
-    {
-        cout << arr2[i];
-        if (i != size2 - 1)
-        {
-            cout << " ";
-        }
-    }
+    cout << abs(plus - minus) << "\n";
 }
 
 int main()
 {
-// #ifndef ONLINE_JUDGE
-//     freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
     fastIO();
     ll tc = 1;
-    // cin >> tc;
+    cin >> tc;
     for (int t = 1; t <= tc; t++)
     {
         // cout << "Case #" << t << ": ";
         helper();
     }
-// #ifndef ONLINE_JUDGE
-//     runTime();
-// #endif
+#ifndef ONLINE_JUDGE
+    runTime();
+#endif
     return 0;
 }
