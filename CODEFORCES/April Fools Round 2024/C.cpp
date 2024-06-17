@@ -1,5 +1,5 @@
 // Author: Ripan-Roy
-// Created: 2023-11-24
+// Created: 2024-04-01
 #pragma GCC optimize("Ofast")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
 #pragma GCC optimize("unroll-loops")
@@ -42,42 +42,38 @@ void runTime()
 {
     cerr << "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " ms.\n";
 }
-Z
+
+ll count1(string s)
+{
+    ll cnt = 0;
+    for (int i = 0; i < s.size(); i++)
+    {
+        if (s[i] == '1')
+            cnt++;
+    }
+    return cnt;
+}
+
 void helper()
 {
-    ll n, m;
-    cin >> n >> m;
-    vector<vector<ll>> fort(n, vector<ll>(m, 0));
-    for (ll i = 0; i < n; ++i)
+    vector<string> arr;
+    ll minval = INT_MAX;
+    for (int i = 0; i < 12; i++)
     {
-        for (ll j = 0; j < m; ++j)
-        {
-            cin >> fort[i][j];
-        }
+        string s;
+        cin >> s;
+        arr.push_back(s);
+        minval = min(minval, count1(s));
     }
-    ll maxTime = 0;
-    for (ll i = 1; i < n - 1; i++)
-    {
-        for (ll j = 1; j < m - 1; j++)
-        {
-            if (fort[i][j] == 0)
-            {
-                fort[i][j] = 1;
-                ll dist = bfs(n, m, fort, 0, 0);
-                maxTime = max(maxTime, dist);
-                fort[i][j] = 0;
-            }
-        }
-    }
-    cout << maxTime + 1;
+    cout << 12;
 }
 
 int main()
 {
-// #ifndef ONLINE_JUDGE
-//     freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
     fastIO();
     ll tc = 1;
     // cin >> tc;
@@ -86,8 +82,8 @@ int main()
         // cout << "Case #" << t << ": ";
         helper();
     }
-// #ifndef ONLINE_JUDGE
-//     runTime();
-// #endif
+#ifndef ONLINE_JUDGE
+    runTime();
+#endif
     return 0;
 }

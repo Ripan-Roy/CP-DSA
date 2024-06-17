@@ -1,5 +1,5 @@
 // Author: Ripan-Roy
-// Created: 2023-11-24
+// Created: 2024-05-31
 #pragma GCC optimize("Ofast")
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
 #pragma GCC optimize("unroll-loops")
@@ -21,7 +21,7 @@ typedef pair<ll, ll> pll;
 typedef tree<int, null_type, less<ll>, rb_tree_tag, tree_order_statistics_node_update> oSet;
 
 #define FOR(i, a, b) for (int i = (a); i < (b); ++i)
-#define RFOR(i, b, a) for (int i = (b)-1; i >= (a); --i)
+#define RFOR(i, b, a) for (int i = (b) - 1; i >= (a); --i)
 #define VIN(i, n) FOR(i, 0, n)
 #define RVIN(i, n) RFOR(i, n, 0)
 #define PB push_back
@@ -42,52 +42,53 @@ void runTime()
 {
     cerr << "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " ms.\n";
 }
-Z
+
+ll calculate(ll l, ll r)
+{
+    ll maxP = 0;
+    ll curP = 1;
+    while (curP <= r)
+    {
+        curP *= 2;
+    }
+
+    curP /= 2;
+    while (curP >= l)
+    {
+        if (curP >= l)
+        {
+            maxP = curP;
+            break;
+        }
+        curP /= 2;
+    }
+    ll score = log2(maxP);
+    return score;
+}
+
 void helper()
 {
-    ll n, m;
-    cin >> n >> m;
-    vector<vector<ll>> fort(n, vector<ll>(m, 0));
-    for (ll i = 0; i < n; ++i)
-    {
-        for (ll j = 0; j < m; ++j)
-        {
-            cin >> fort[i][j];
-        }
-    }
-    ll maxTime = 0;
-    for (ll i = 1; i < n - 1; i++)
-    {
-        for (ll j = 1; j < m - 1; j++)
-        {
-            if (fort[i][j] == 0)
-            {
-                fort[i][j] = 1;
-                ll dist = bfs(n, m, fort, 0, 0);
-                maxTime = max(maxTime, dist);
-                fort[i][j] = 0;
-            }
-        }
-    }
-    cout << maxTime + 1;
+    ll l, r;
+    cin >> l >> r;
+    cout << calculate(l, r) << endl;
 }
 
 int main()
 {
-// #ifndef ONLINE_JUDGE
-//     freopen("input.txt", "r", stdin);
-//     freopen("output.txt", "w", stdout);
-// #endif
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
     fastIO();
     ll tc = 1;
-    // cin >> tc;
+    cin >> tc;
     for (int t = 1; t <= tc; t++)
     {
         // cout << "Case #" << t << ": ";
         helper();
     }
-// #ifndef ONLINE_JUDGE
-//     runTime();
-// #endif
+#ifndef ONLINE_JUDGE
+    runTime();
+#endif
     return 0;
 }

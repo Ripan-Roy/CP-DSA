@@ -1,0 +1,1 @@
+{"name":"Local: C","url":"c:\\Users\\Ripan Roy\\Desktop\\CP\\CODEFORCES\\ROUND 928\\C.py","tests":[{"id":1708411397686,"input":"7\n12\n1\n2\n3\n1434\n2024\n200000","output":"51\n1\n3\n6\n18465\n28170\n4600002"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Ripan Roy\\Desktop\\CP\\CODEFORCES\\ROUND 928\\C.py","group":"local","local":true}
